@@ -1,126 +1,126 @@
 <Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> Partial Class FrmRack
 #Region "Windows Form Designer generated code "
-	<System.Diagnostics.DebuggerNonUserCode()> Public Sub New()
-		MyBase.New()
-		'This call is required by the Windows Form Designer.
-		InitializeComponent()
-	End Sub
-	'Form overrides dispose to clean up the component list.
-	<System.Diagnostics.DebuggerNonUserCode()> Protected Overloads Overrides Sub Dispose(ByVal Disposing As Boolean)
-		If Disposing Then
-			If Not components Is Nothing Then
-				components.Dispose()
-			End If
-		End If
-		MyBase.Dispose(Disposing)
-	End Sub
-	'Required by the Windows Form Designer
-	Private components As System.ComponentModel.IContainer
-	Public ToolTip1 As System.Windows.Forms.ToolTip
-	Public WithEvents _Txt_slot_45 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_44 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_43 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_42 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_41 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_40 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_39 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_38 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_37 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_36 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_35 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_34 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_33 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_32 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_31 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_19 As System.Windows.Forms.TextBox
-	Public WithEvents cmd_back As System.Windows.Forms.Button
-	Public WithEvents _Txt_slot_1 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_2 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_3 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_4 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_5 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_6 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_7 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_8 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_9 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_10 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_11 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_12 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_13 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_14 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_15 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_16 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_17 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_18 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_20 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_21 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_22 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_23 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_24 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_25 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_26 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_27 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_28 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_29 As System.Windows.Forms.TextBox
-	Public WithEvents _Txt_slot_30 As System.Windows.Forms.TextBox
-	Public WithEvents cmd_save As System.Windows.Forms.Button
-	Public WithEvents _Label1_45 As System.Windows.Forms.Label
-	Public WithEvents _Label1_44 As System.Windows.Forms.Label
-	Public WithEvents _Label1_43 As System.Windows.Forms.Label
-	Public WithEvents _Label1_42 As System.Windows.Forms.Label
-	Public WithEvents _Label1_41 As System.Windows.Forms.Label
-	Public WithEvents _Label1_40 As System.Windows.Forms.Label
-	Public WithEvents _Label1_39 As System.Windows.Forms.Label
-	Public WithEvents _Label1_38 As System.Windows.Forms.Label
-	Public WithEvents _Label1_37 As System.Windows.Forms.Label
-	Public WithEvents _Label1_36 As System.Windows.Forms.Label
-	Public WithEvents _Label1_35 As System.Windows.Forms.Label
-	Public WithEvents _Label1_34 As System.Windows.Forms.Label
-	Public WithEvents _Label1_33 As System.Windows.Forms.Label
-	Public WithEvents _Label1_32 As System.Windows.Forms.Label
-	Public WithEvents _Label1_31 As System.Windows.Forms.Label
-	'Public WithEvents Line1 As Microsoft.VisualBasic.PowerPacks.LineShape
-	Public WithEvents _Label1_25 As System.Windows.Forms.Label
-	Public WithEvents _Label1_26 As System.Windows.Forms.Label
-	Public WithEvents _Label1_27 As System.Windows.Forms.Label
-	Public WithEvents _Label1_28 As System.Windows.Forms.Label
-	Public WithEvents _Label1_29 As System.Windows.Forms.Label
-	Public WithEvents _Label2_7 As System.Windows.Forms.Label
-	Public WithEvents _Label2_0 As System.Windows.Forms.Label
-	Public WithEvents _Label1_24 As System.Windows.Forms.Label
-	Public WithEvents _Label1_23 As System.Windows.Forms.Label
-	Public WithEvents _Label1_22 As System.Windows.Forms.Label
-	Public WithEvents _Label1_21 As System.Windows.Forms.Label
-	Public WithEvents _Label1_20 As System.Windows.Forms.Label
-	Public WithEvents _Label1_19 As System.Windows.Forms.Label
-	Public WithEvents _Label1_18 As System.Windows.Forms.Label
-	Public WithEvents _Label1_17 As System.Windows.Forms.Label
-	Public WithEvents _Label1_16 As System.Windows.Forms.Label
-	Public WithEvents _Label1_15 As System.Windows.Forms.Label
-	Public WithEvents _Label1_14 As System.Windows.Forms.Label
-	Public WithEvents _Label1_13 As System.Windows.Forms.Label
-	Public WithEvents _Label1_12 As System.Windows.Forms.Label
-	Public WithEvents _Label1_11 As System.Windows.Forms.Label
-	Public WithEvents _Label1_10 As System.Windows.Forms.Label
-	Public WithEvents _Label1_9 As System.Windows.Forms.Label
-	Public WithEvents _Label1_8 As System.Windows.Forms.Label
-	Public WithEvents _Label1_7 As System.Windows.Forms.Label
-	Public WithEvents _Label1_6 As System.Windows.Forms.Label
-	Public WithEvents _Label1_5 As System.Windows.Forms.Label
-	Public WithEvents _Label1_4 As System.Windows.Forms.Label
-	Public WithEvents _Label1_3 As System.Windows.Forms.Label
-	Public WithEvents _Label1_2 As System.Windows.Forms.Label
-	Public WithEvents _Label1_1 As System.Windows.Forms.Label
-	Public WithEvents _Label1_0 As System.Windows.Forms.Label
-	Public WithEvents Label3 As System.Windows.Forms.Label
-	Public WithEvents Label1 As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents Label2 As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
-	Public WithEvents Txt_slot As Microsoft.VisualBasic.Compatibility.VB6.TextBoxArray
-	'Public WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
-	'NOTE: The following procedure is required by the Windows Form Designer
-	'It can be modified using the Windows Form Designer.
-	'Do not modify it using the code editor.
-	<System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
+    <System.Diagnostics.DebuggerNonUserCode()> Public Sub New()
+        MyBase.New()
+        'This call is required by the Windows Form Designer.
+        InitializeComponent()
+    End Sub
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()> Protected Overloads Overrides Sub Dispose(ByVal Disposing As Boolean)
+        If Disposing Then
+            If Not components Is Nothing Then
+                components.Dispose()
+            End If
+        End If
+        MyBase.Dispose(Disposing)
+    End Sub
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
+    Public ToolTip1 As System.Windows.Forms.ToolTip
+    Public WithEvents _Txt_slot_45 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_44 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_43 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_42 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_41 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_40 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_39 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_38 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_37 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_36 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_35 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_34 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_33 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_32 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_31 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_19 As System.Windows.Forms.TextBox
+    Public WithEvents cmd_back As System.Windows.Forms.Button
+    Public WithEvents _Txt_slot_1 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_2 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_3 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_4 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_5 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_6 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_7 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_8 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_9 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_10 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_11 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_12 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_13 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_14 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_15 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_16 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_17 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_18 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_20 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_21 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_22 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_23 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_24 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_25 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_26 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_27 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_28 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_29 As System.Windows.Forms.TextBox
+    Public WithEvents _Txt_slot_30 As System.Windows.Forms.TextBox
+    Public WithEvents cmd_save As System.Windows.Forms.Button
+    Public WithEvents _Label1_45 As System.Windows.Forms.Label
+    Public WithEvents _Label1_44 As System.Windows.Forms.Label
+    Public WithEvents _Label1_43 As System.Windows.Forms.Label
+    Public WithEvents _Label1_42 As System.Windows.Forms.Label
+    Public WithEvents _Label1_41 As System.Windows.Forms.Label
+    Public WithEvents _Label1_40 As System.Windows.Forms.Label
+    Public WithEvents _Label1_39 As System.Windows.Forms.Label
+    Public WithEvents _Label1_38 As System.Windows.Forms.Label
+    Public WithEvents _Label1_37 As System.Windows.Forms.Label
+    Public WithEvents _Label1_36 As System.Windows.Forms.Label
+    Public WithEvents _Label1_35 As System.Windows.Forms.Label
+    Public WithEvents _Label1_34 As System.Windows.Forms.Label
+    Public WithEvents _Label1_33 As System.Windows.Forms.Label
+    Public WithEvents _Label1_32 As System.Windows.Forms.Label
+    Public WithEvents _Label1_31 As System.Windows.Forms.Label
+    'Public WithEvents Line1 As Microsoft.VisualBasic.PowerPacks.LineShape
+    Public WithEvents _Label1_25 As System.Windows.Forms.Label
+    Public WithEvents _Label1_26 As System.Windows.Forms.Label
+    Public WithEvents _Label1_27 As System.Windows.Forms.Label
+    Public WithEvents _Label1_28 As System.Windows.Forms.Label
+    Public WithEvents _Label1_29 As System.Windows.Forms.Label
+    Public WithEvents _Label2_7 As System.Windows.Forms.Label
+    Public WithEvents _Label2_0 As System.Windows.Forms.Label
+    Public WithEvents _Label1_24 As System.Windows.Forms.Label
+    Public WithEvents _Label1_23 As System.Windows.Forms.Label
+    Public WithEvents _Label1_22 As System.Windows.Forms.Label
+    Public WithEvents _Label1_21 As System.Windows.Forms.Label
+    Public WithEvents _Label1_20 As System.Windows.Forms.Label
+    Public WithEvents _Label1_19 As System.Windows.Forms.Label
+    Public WithEvents _Label1_18 As System.Windows.Forms.Label
+    Public WithEvents _Label1_17 As System.Windows.Forms.Label
+    Public WithEvents _Label1_16 As System.Windows.Forms.Label
+    Public WithEvents _Label1_15 As System.Windows.Forms.Label
+    Public WithEvents _Label1_14 As System.Windows.Forms.Label
+    Public WithEvents _Label1_13 As System.Windows.Forms.Label
+    Public WithEvents _Label1_12 As System.Windows.Forms.Label
+    Public WithEvents _Label1_11 As System.Windows.Forms.Label
+    Public WithEvents _Label1_10 As System.Windows.Forms.Label
+    Public WithEvents _Label1_9 As System.Windows.Forms.Label
+    Public WithEvents _Label1_8 As System.Windows.Forms.Label
+    Public WithEvents _Label1_7 As System.Windows.Forms.Label
+    Public WithEvents _Label1_6 As System.Windows.Forms.Label
+    Public WithEvents _Label1_5 As System.Windows.Forms.Label
+    Public WithEvents _Label1_4 As System.Windows.Forms.Label
+    Public WithEvents _Label1_3 As System.Windows.Forms.Label
+    Public WithEvents _Label1_2 As System.Windows.Forms.Label
+    Public WithEvents _Label1_1 As System.Windows.Forms.Label
+    Public WithEvents _Label1_0 As System.Windows.Forms.Label
+    Public WithEvents Label3 As System.Windows.Forms.Label
+    Public WithEvents Label1 As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
+    Public WithEvents Label2 As Microsoft.VisualBasic.Compatibility.VB6.LabelArray
+    Public WithEvents Txt_slot As Microsoft.VisualBasic.Compatibility.VB6.TextBoxArray
+    'Public WithEvents ShapeContainer1 As Microsoft.VisualBasic.PowerPacks.ShapeContainer
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()> Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmRack))
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)

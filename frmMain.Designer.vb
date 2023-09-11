@@ -82,6 +82,20 @@ Partial Class frmMain
         Me.Text6 = New System.Windows.Forms.TextBox()
         Me.WOGrid = New System.Windows.Forms.DataGridView()
         Me.ConnectTable = New System.Windows.Forms.DataGridView()
+        Me.Frame3 = New System.Windows.Forms.GroupBox()
+        Me._Text1_4 = New System.Windows.Forms.TextBox()
+        Me._Text1_2 = New System.Windows.Forms.TextBox()
+        Me._Text1_1 = New System.Windows.Forms.TextBox()
+        Me._Text1_0 = New System.Windows.Forms.TextBox()
+        Me._Text1_3 = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me._Label1_13 = New System.Windows.Forms.Label()
+        Me._Label1_2 = New System.Windows.Forms.Label()
+        Me._Label1_1 = New System.Windows.Forms.Label()
+        Me._Label1_0 = New System.Windows.Forms.Label()
+        Me._Label1_12 = New System.Windows.Forms.Label()
         Me.Frame8 = New System.Windows.Forms.GroupBox()
         Me.Cmd_Save = New System.Windows.Forms.Button()
         Me.MSFlexGrid3 = New System.Windows.Forms.DataGridView()
@@ -144,20 +158,6 @@ Partial Class frmMain
         Me.Frame9 = New System.Windows.Forms.GroupBox()
         Me.Text7 = New System.Windows.Forms.TextBox()
         Me.File1 = New System.Windows.Forms.ListBox()
-        Me.Frame3 = New System.Windows.Forms.GroupBox()
-        Me._Text1_4 = New System.Windows.Forms.TextBox()
-        Me._Text1_2 = New System.Windows.Forms.TextBox()
-        Me._Text1_1 = New System.Windows.Forms.TextBox()
-        Me._Text1_0 = New System.Windows.Forms.TextBox()
-        Me._Text1_3 = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me._Label1_13 = New System.Windows.Forms.Label()
-        Me._Label1_2 = New System.Windows.Forms.Label()
-        Me._Label1_1 = New System.Windows.Forms.Label()
-        Me._Label1_0 = New System.Windows.Forms.Label()
-        Me._Label1_12 = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.TimerBusy = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
@@ -173,6 +173,7 @@ Partial Class frmMain
         CType(Me.MSFlexGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.WOGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ConnectTable, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Frame3.SuspendLayout()
         Me.Frame8.SuspendLayout()
         CType(Me.MSFlexGrid3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Frame6.SuspendLayout()
@@ -182,7 +183,6 @@ Partial Class frmMain
         Me.Frame7.SuspendLayout()
         CType(Me.MSFlexGrid2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Frame9.SuspendLayout()
-        Me.Frame3.SuspendLayout()
         Me.SuspendLayout()
         '
         'MS_1
@@ -220,44 +220,44 @@ Partial Class frmMain
         Me.Cmd_RFID.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.WOEntryToolStripMenuItem, Me.WOClosureToolStripMenuItem, Me.WOMasterToolStripMenuItem, Me.WODistrupToolStripMenuItem})
         Me.Cmd_RFID.Enabled = False
         Me.Cmd_RFID.Name = "Cmd_RFID"
-        Me.Cmd_RFID.Size = New System.Drawing.Size(180, 22)
+        Me.Cmd_RFID.Size = New System.Drawing.Size(135, 22)
         Me.Cmd_RFID.Text = "Work Order"
         '
         'WOEntryToolStripMenuItem
         '
         Me.WOEntryToolStripMenuItem.Name = "WOEntryToolStripMenuItem"
-        Me.WOEntryToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.WOEntryToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
         Me.WOEntryToolStripMenuItem.Text = "WO Entry"
         '
         'WOClosureToolStripMenuItem
         '
         Me.WOClosureToolStripMenuItem.Name = "WOClosureToolStripMenuItem"
-        Me.WOClosureToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.WOClosureToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
         Me.WOClosureToolStripMenuItem.Text = "WO Closure"
         '
         'WOMasterToolStripMenuItem
         '
         Me.WOMasterToolStripMenuItem.Name = "WOMasterToolStripMenuItem"
-        Me.WOMasterToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.WOMasterToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
         Me.WOMasterToolStripMenuItem.Text = "WO Master"
         '
         'WODistrupToolStripMenuItem
         '
         Me.WODistrupToolStripMenuItem.Enabled = False
         Me.WODistrupToolStripMenuItem.Name = "WODistrupToolStripMenuItem"
-        Me.WODistrupToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.WODistrupToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
         Me.WODistrupToolStripMenuItem.Text = "WO Distrup"
         '
         'MonitoringToolStripMenuItem
         '
         Me.MonitoringToolStripMenuItem.Name = "MonitoringToolStripMenuItem"
-        Me.MonitoringToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.MonitoringToolStripMenuItem.Size = New System.Drawing.Size(135, 22)
         Me.MonitoringToolStripMenuItem.Text = "Monitoring"
         '
         'Cmd_Login
         '
         Me.Cmd_Login.Name = "Cmd_Login"
-        Me.Cmd_Login.Size = New System.Drawing.Size(180, 22)
+        Me.Cmd_Login.Size = New System.Drawing.Size(135, 22)
         Me.Cmd_Login.Text = "Login"
         '
         'Cmd_Tag
@@ -629,6 +629,137 @@ Partial Class frmMain
         Me.ConnectTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.ConnectTable.Size = New System.Drawing.Size(832, 239)
         Me.ConnectTable.TabIndex = 0
+        '
+        'Frame3
+        '
+        Me.Frame3.Controls.Add(Me._Text1_4)
+        Me.Frame3.Controls.Add(Me._Text1_2)
+        Me.Frame3.Controls.Add(Me._Text1_1)
+        Me.Frame3.Controls.Add(Me._Text1_0)
+        Me.Frame3.Controls.Add(Me._Text1_3)
+        Me.Frame3.Controls.Add(Me.Label5)
+        Me.Frame3.Controls.Add(Me.Label4)
+        Me.Frame3.Controls.Add(Me.Label2)
+        Me.Frame3.Controls.Add(Me._Label1_13)
+        Me.Frame3.Controls.Add(Me._Label1_2)
+        Me.Frame3.Controls.Add(Me._Label1_1)
+        Me.Frame3.Controls.Add(Me._Label1_0)
+        Me.Frame3.Controls.Add(Me._Label1_12)
+        Me.Frame3.Location = New System.Drawing.Point(473, 90)
+        Me.Frame3.Name = "Frame3"
+        Me.Frame3.Size = New System.Drawing.Size(420, 332)
+        Me.Frame3.TabIndex = 0
+        Me.Frame3.TabStop = False
+        Me.Frame3.Text = "New WO Entry - Frame 3"
+        '
+        '_Text1_4
+        '
+        Me._Text1_4.Location = New System.Drawing.Point(163, 122)
+        Me._Text1_4.Name = "_Text1_4"
+        Me._Text1_4.Size = New System.Drawing.Size(247, 20)
+        Me._Text1_4.TabIndex = 17
+        Me._Text1_4.Visible = False
+        '
+        '_Text1_2
+        '
+        Me._Text1_2.Location = New System.Drawing.Point(163, 97)
+        Me._Text1_2.Name = "_Text1_2"
+        Me._Text1_2.Size = New System.Drawing.Size(247, 20)
+        Me._Text1_2.TabIndex = 16
+        '
+        '_Text1_1
+        '
+        Me._Text1_1.Location = New System.Drawing.Point(163, 71)
+        Me._Text1_1.Name = "_Text1_1"
+        Me._Text1_1.Size = New System.Drawing.Size(247, 20)
+        Me._Text1_1.TabIndex = 15
+        '
+        '_Text1_0
+        '
+        Me._Text1_0.Location = New System.Drawing.Point(163, 45)
+        Me._Text1_0.Name = "_Text1_0"
+        Me._Text1_0.Size = New System.Drawing.Size(247, 20)
+        Me._Text1_0.TabIndex = 14
+        '
+        '_Text1_3
+        '
+        Me._Text1_3.Location = New System.Drawing.Point(163, 19)
+        Me._Text1_3.Name = "_Text1_3"
+        Me._Text1_3.Size = New System.Drawing.Size(247, 20)
+        Me._Text1_3.TabIndex = 13
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(247, 308)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(42, 13)
+        Me.Label5.TabIndex = 12
+        Me.Label5.Text = "VALUE"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(160, 308)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(81, 13)
+        Me.Label4.TabIndex = 11
+        Me.Label4.Text = "Tag Life Cycle :"
+        '
+        'Label2
+        '
+        Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label2.Location = New System.Drawing.Point(9, 153)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(401, 137)
+        Me.Label2.TabIndex = 10
+        Me.Label2.Text = "Place a Change Sales Dummy Unit on the Sensor and scan the Work Order Number ..."
+        '
+        '_Label1_13
+        '
+        Me._Label1_13.AutoSize = True
+        Me._Label1_13.Location = New System.Drawing.Point(49, 125)
+        Me._Label1_13.Name = "_Label1_13"
+        Me._Label1_13.Size = New System.Drawing.Size(105, 13)
+        Me._Label1_13.TabIndex = 9
+        Me._Label1_13.Text = "Logistic Centre Code"
+        Me._Label1_13.Visible = False
+        '
+        '_Label1_2
+        '
+        Me._Label1_2.AutoSize = True
+        Me._Label1_2.Location = New System.Drawing.Point(17, 100)
+        Me._Label1_2.Name = "_Label1_2"
+        Me._Label1_2.Size = New System.Drawing.Size(137, 13)
+        Me._Label1_2.TabIndex = 7
+        Me._Label1_2.Text = "Ticket Work Order Quantity"
+        '
+        '_Label1_1
+        '
+        Me._Label1_1.AutoSize = True
+        Me._Label1_1.Location = New System.Drawing.Point(6, 74)
+        Me._Label1_1.Name = "_Label1_1"
+        Me._Label1_1.Size = New System.Drawing.Size(148, 13)
+        Me._Label1_1.TabIndex = 6
+        Me._Label1_1.Text = "Ticket Work Order Reference"
+        '
+        '_Label1_0
+        '
+        Me._Label1_0.AutoSize = True
+        Me._Label1_0.Location = New System.Drawing.Point(33, 48)
+        Me._Label1_0.Name = "_Label1_0"
+        Me._Label1_0.Size = New System.Drawing.Size(121, 13)
+        Me._Label1_0.TabIndex = 5
+        Me._Label1_0.Text = "Ticket Work Order NOS"
+        '
+        '_Label1_12
+        '
+        Me._Label1_12.AutoSize = True
+        Me._Label1_12.Location = New System.Drawing.Point(102, 22)
+        Me._Label1_12.Name = "_Label1_12"
+        Me._Label1_12.Size = New System.Drawing.Size(52, 13)
+        Me._Label1_12.TabIndex = 4
+        Me._Label1_12.Text = "PFS/PFC"
         '
         'Frame8
         '
@@ -1217,137 +1348,6 @@ Partial Class frmMain
         Me.File1.Size = New System.Drawing.Size(369, 95)
         Me.File1.TabIndex = 3
         '
-        'Frame3
-        '
-        Me.Frame3.Controls.Add(Me._Text1_4)
-        Me.Frame3.Controls.Add(Me._Text1_2)
-        Me.Frame3.Controls.Add(Me._Text1_1)
-        Me.Frame3.Controls.Add(Me._Text1_0)
-        Me.Frame3.Controls.Add(Me._Text1_3)
-        Me.Frame3.Controls.Add(Me.Label5)
-        Me.Frame3.Controls.Add(Me.Label4)
-        Me.Frame3.Controls.Add(Me.Label2)
-        Me.Frame3.Controls.Add(Me._Label1_13)
-        Me.Frame3.Controls.Add(Me._Label1_2)
-        Me.Frame3.Controls.Add(Me._Label1_1)
-        Me.Frame3.Controls.Add(Me._Label1_0)
-        Me.Frame3.Controls.Add(Me._Label1_12)
-        Me.Frame3.Location = New System.Drawing.Point(473, 90)
-        Me.Frame3.Name = "Frame3"
-        Me.Frame3.Size = New System.Drawing.Size(420, 332)
-        Me.Frame3.TabIndex = 0
-        Me.Frame3.TabStop = False
-        Me.Frame3.Text = "New WO Entry - Frame 3"
-        '
-        '_Text1_4
-        '
-        Me._Text1_4.Location = New System.Drawing.Point(163, 122)
-        Me._Text1_4.Name = "_Text1_4"
-        Me._Text1_4.Size = New System.Drawing.Size(247, 20)
-        Me._Text1_4.TabIndex = 17
-        Me._Text1_4.Visible = False
-        '
-        '_Text1_2
-        '
-        Me._Text1_2.Location = New System.Drawing.Point(163, 97)
-        Me._Text1_2.Name = "_Text1_2"
-        Me._Text1_2.Size = New System.Drawing.Size(247, 20)
-        Me._Text1_2.TabIndex = 16
-        '
-        '_Text1_1
-        '
-        Me._Text1_1.Location = New System.Drawing.Point(163, 71)
-        Me._Text1_1.Name = "_Text1_1"
-        Me._Text1_1.Size = New System.Drawing.Size(247, 20)
-        Me._Text1_1.TabIndex = 15
-        '
-        '_Text1_0
-        '
-        Me._Text1_0.Location = New System.Drawing.Point(163, 45)
-        Me._Text1_0.Name = "_Text1_0"
-        Me._Text1_0.Size = New System.Drawing.Size(247, 20)
-        Me._Text1_0.TabIndex = 14
-        '
-        '_Text1_3
-        '
-        Me._Text1_3.Location = New System.Drawing.Point(163, 19)
-        Me._Text1_3.Name = "_Text1_3"
-        Me._Text1_3.Size = New System.Drawing.Size(247, 20)
-        Me._Text1_3.TabIndex = 13
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(247, 308)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(42, 13)
-        Me.Label5.TabIndex = 12
-        Me.Label5.Text = "VALUE"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(160, 308)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(81, 13)
-        Me.Label4.TabIndex = 11
-        Me.Label4.Text = "Tag Life Cycle :"
-        '
-        'Label2
-        '
-        Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label2.Location = New System.Drawing.Point(9, 153)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(401, 137)
-        Me.Label2.TabIndex = 10
-        Me.Label2.Text = "Place a Change Sales Dummy Unit on the Sensor and scan the Work Order Number ..."
-        '
-        '_Label1_13
-        '
-        Me._Label1_13.AutoSize = True
-        Me._Label1_13.Location = New System.Drawing.Point(49, 125)
-        Me._Label1_13.Name = "_Label1_13"
-        Me._Label1_13.Size = New System.Drawing.Size(105, 13)
-        Me._Label1_13.TabIndex = 9
-        Me._Label1_13.Text = "Logistic Centre Code"
-        Me._Label1_13.Visible = False
-        '
-        '_Label1_2
-        '
-        Me._Label1_2.AutoSize = True
-        Me._Label1_2.Location = New System.Drawing.Point(17, 100)
-        Me._Label1_2.Name = "_Label1_2"
-        Me._Label1_2.Size = New System.Drawing.Size(137, 13)
-        Me._Label1_2.TabIndex = 7
-        Me._Label1_2.Text = "Ticket Work Order Quantity"
-        '
-        '_Label1_1
-        '
-        Me._Label1_1.AutoSize = True
-        Me._Label1_1.Location = New System.Drawing.Point(6, 74)
-        Me._Label1_1.Name = "_Label1_1"
-        Me._Label1_1.Size = New System.Drawing.Size(148, 13)
-        Me._Label1_1.TabIndex = 6
-        Me._Label1_1.Text = "Ticket Work Order Reference"
-        '
-        '_Label1_0
-        '
-        Me._Label1_0.AutoSize = True
-        Me._Label1_0.Location = New System.Drawing.Point(33, 48)
-        Me._Label1_0.Name = "_Label1_0"
-        Me._Label1_0.Size = New System.Drawing.Size(121, 13)
-        Me._Label1_0.TabIndex = 5
-        Me._Label1_0.Text = "Ticket Work Order NOS"
-        '
-        '_Label1_12
-        '
-        Me._Label1_12.AutoSize = True
-        Me._Label1_12.Location = New System.Drawing.Point(102, 22)
-        Me._Label1_12.Name = "_Label1_12"
-        Me._Label1_12.Size = New System.Drawing.Size(52, 13)
-        Me._Label1_12.TabIndex = 4
-        Me._Label1_12.Text = "PFS/PFC"
-        '
         'Timer1
         '
         Me.Timer1.Enabled = True
@@ -1399,6 +1399,8 @@ Partial Class frmMain
         CType(Me.MSFlexGrid1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.WOGrid, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ConnectTable, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Frame3.ResumeLayout(False)
+        Me.Frame3.PerformLayout()
         Me.Frame8.ResumeLayout(False)
         Me.Frame8.PerformLayout()
         CType(Me.MSFlexGrid3, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1414,8 +1416,6 @@ Partial Class frmMain
         CType(Me.MSFlexGrid2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Frame9.ResumeLayout(False)
         Me.Frame9.PerformLayout()
-        Me.Frame3.ResumeLayout(False)
-        Me.Frame3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

@@ -1041,258 +1041,261 @@ Public Class frmMain
     End Sub
 
     Private Sub BarcodeScan_Comm_DataReceived(sender As Object, e As Ports.SerialDataReceivedEventArgs) Handles BarcodeScan_Comm.DataReceived
-        WOBuffer = WOBuffer & BarcodeScan_Comm.ReadExisting()
+        WOBuffer = BarcodeScan_Comm.ReadExisting()
 
-        If WOBuffer.IndexOf(vbCrLf) <> 0 Then
-            WOBuffer = Mid(WOBuffer, 1, WOBuffer.IndexOf(vbCr) - 1) 'Trim off VBCRLF
-            If SelectedMode = 1 Then 'WO Entry
-                If CSAction = 0 Then
-                    WOBuffer = Mid(WOBuffer, 2, 1)
-                    CSInfo.CSWOPFMODE = WOBuffer
-                    _Text1_3.Text = CSInfo.CSWOPFMODE
-                    Label2.Text = "Please scan the WO Nos Barcode..."
-                    WOBuffer = ""
-                    If CSInfo.CSWOPFMODE = "C" Then
-                        _Label1_13.Visible = True
-                        _Text1_4.Visible = True
-                    ElseIf CSInfo.CSWOPFMODE = "S" Then
-                        _Label1_13.Visible = False
-                        _Text1_4.Visible = False
-                    End If
-                    CSAction = 1
-                    Exit Sub
-                ElseIf CSAction = 1 Then
-                    CSInfo.CSWONOS = WOBuffer
-                    _Text1_0.Text = CSInfo.CSWONOS
-                    If WONosCheck(WOBuffer) Then
-                        Label2.Text = "WO already exist. Cannot be enter again" & vbCrLf & "Please start over again"
-                        WOBuffer = ""
-                        CSAction = 0
-                        _Text1_0.Text = ""
-                        _Text1_1.Text = ""
-                        _Text1_2.Text = ""
-                        _Text1_3.Text = ""
-                        _Text1_4.Text = ""
-                        SelectedMode = 1
-                        CSAction = 0
-                        Exit Sub
-                    End If
-                    Label2.Text = "Please scan the Reference Barcode..."
-                    WOBuffer = ""
-                    CSAction = 2
-                    Exit Sub
-                ElseIf CSAction = 2 Then
-                    WOBuffer = Mid(WOBuffer, 2)
-                    If Not WORefCheck(WOBuffer) Then
-                        Label2.Text = "Invalid Reference. Reference Name not exist in database" & vbCrLf & "Please start over again"
-                        WOBuffer = ""
-                        CSAction = 0
-                        _Text1_0.Text = ""
-                        _Text1_1.Text = ""
-                        _Text1_2.Text = ""
-                        _Text1_3.Text = ""
-                        _Text1_4.Text = ""
-                        SelectedMode = 1
-                        CSAction = 0
-                        Exit Sub
-                    End If
-                    CSInfo.CSWOMODEL = WOBuffer
-                    _Text1_1.Text = CSInfo.CSWOMODEL
-                    Label2.Text = "Please scan the Quantity Barcode..."
-                    WOBuffer = ""
-                    CSAction = 3
-                    Exit Sub
-                ElseIf CSAction = 3 Then
-                    If Not IsNumeric(WOBuffer) Then
-                        Label2.Text = "Invalid Barcode Quantity" & vbCrLf & "Please start over again"
-                        CSAction = 0
-                        _Text1_0.Text = ""
-                        _Text1_1.Text = ""
-                        _Text1_2.Text = ""
-                        _Text1_3.Text = ""
-                        _Text1_4.Text = ""
-                        WOBuffer = ""
-                        SelectedMode = 1
-                        CSAction = 0
-                        Exit Sub
-                    End If
-                    CSInfo.CSWOQTY = WOBuffer
-                    _Text1_2.Text = CSInfo.CSWOQTY
-                    WOBuffer = ""
-                    If CSInfo.CSWOPFMODE = "S" Then
-                        GoTo PrgTag
-                    Else
-                        CSAction = 4
-                    End If
-                    Exit Sub
-                ElseIf CSAction = 4 Then
-                    CSInfo.CSWOLC = WOBuffer
-                    _Text1_4.Text = WOBuffer
-                    WOBuffer = ""
-                    GoTo PrgTag
-                End If
+        If InStr(1, WOBuffer, vbCrLf) <> 0 Then
+            Me.Invoke(Sub()
+                          WOBuffer = Mid(WOBuffer, 1, WOBuffer.IndexOf(vbCr) - 1) 'Trim off VBCRLF
+                          If SelectedMode = 1 Then 'WO Entry
+                              If CSAction = 0 Then
+                                  WOBuffer = Mid(WOBuffer, 2, 1)
+                                  CSInfo.CSWOPFMODE = WOBuffer
+                                  _Text1_3.Text = CSInfo.CSWOPFMODE
+                                  Label2.Text = "Please scan the WO Nos Barcode..."
+                                  WOBuffer = ""
+                                  If CSInfo.CSWOPFMODE = "C" Then
+                                      _Label1_13.Visible = True
+                                      _Text1_4.Visible = True
+                                  ElseIf CSInfo.CSWOPFMODE = "S" Then
+                                      _Label1_13.Visible = False
+                                      _Text1_4.Visible = False
+                                  End If
+                                  CSAction = 1
+                                  Exit Sub
+                              ElseIf CSAction = 1 Then
+                                  CSInfo.CSWONOS = WOBuffer
+                                  _Text1_0.Text = CSInfo.CSWONOS
+                                  If WONosCheck(WOBuffer) Then
+                                      Label2.Text = "WO already exist. Cannot be enter again" & vbCrLf & "Please start over again"
+                                      WOBuffer = ""
+                                      CSAction = 0
+                                      _Text1_0.Text = ""
+                                      _Text1_1.Text = ""
+                                      _Text1_2.Text = ""
+                                      _Text1_3.Text = ""
+                                      _Text1_4.Text = ""
+                                      SelectedMode = 1
+                                      CSAction = 0
+                                      Exit Sub
+                                  End If
+                                  Label2.Text = "Please scan the Reference Barcode..."
+                                  WOBuffer = ""
+                                  CSAction = 2
+                                  Exit Sub
+                              ElseIf CSAction = 2 Then
+                                  WOBuffer = Mid(WOBuffer, 2)
+                                  If Not WORefCheck(WOBuffer) Then
+                                      Label2.Text = "Invalid Reference. Reference Name not exist in database" & vbCrLf & "Please start over again"
+                                      WOBuffer = ""
+                                      CSAction = 0
+                                      _Text1_0.Text = ""
+                                      _Text1_1.Text = ""
+                                      _Text1_2.Text = ""
+                                      _Text1_3.Text = ""
+                                      _Text1_4.Text = ""
+                                      SelectedMode = 1
+                                      CSAction = 0
+                                      Exit Sub
+                                  End If
+                                  CSInfo.CSWOMODEL = WOBuffer
+                                  _Text1_1.Text = CSInfo.CSWOMODEL
+                                  Label2.Text = "Please scan the Quantity Barcode..."
+                                  WOBuffer = ""
+                                  CSAction = 3
+                                  Exit Sub
+                              ElseIf CSAction = 3 Then
+                                  If Not IsNumeric(WOBuffer) Then
+                                      Label2.Text = "Invalid Barcode Quantity" & vbCrLf & "Please start over again"
+                                      CSAction = 0
+                                      _Text1_0.Text = ""
+                                      _Text1_1.Text = ""
+                                      _Text1_2.Text = ""
+                                      _Text1_3.Text = ""
+                                      _Text1_4.Text = ""
+                                      WOBuffer = ""
+                                      SelectedMode = 1
+                                      CSAction = 0
+                                      Exit Sub
+                                  End If
+                                  CSInfo.CSWOQTY = WOBuffer
+                                  _Text1_2.Text = CSInfo.CSWOQTY
+                                  WOBuffer = ""
+                                  If CSInfo.CSWOPFMODE = "S" Then
+                                      GoTo PrgTag
+                                  Else
+                                      CSAction = 4
+                                  End If
+                                  Exit Sub
+                              ElseIf CSAction = 4 Then
+                                  CSInfo.CSWOLC = WOBuffer
+                                  _Text1_4.Text = WOBuffer
+                                  WOBuffer = ""
+                                  GoTo PrgTag
+                              End If
 
 PrgTag:
-                Label2.Text = "Please wait while Verifying the Tag..."
-                Dim Rdtagcount As Long
-                Dim Rdtagnos As String
-                Dim Rdtagref As String
-                Dim RdtagWOnos As String
-                Dim Rdtagqty As String
-                Dim Rdtagop As String
+                              Label2.Text = "Please wait while Verifying the Tag..."
+                              Dim Rdtagcount As Long
+                              Dim Rdtagnos As String
+                              Dim Rdtagref As String
+                              Dim RdtagWOnos As String
+                              Dim Rdtagqty As String
+                              Dim Rdtagop As String
 
-                Rdtagcount = CLng(RD_MULTI_RFID("004C", 3)) 'Tag Life Cycle
-                Rdtagnos = RD_MULTI_RFID("0040", 3)
-                Rdtagref = RD_MULTI_RFID("0014", 10)
-                RdtagWOnos = RD_MULTI_RFID("0000", 10)
-                Rdtagqty = RD_MULTI_RFID("0028", 10)
-                Rdtagop = RD_MULTI_RFID("0046", 3) 'WO output counter at packaging
+                              Rdtagcount = CLng(RD_MULTI_RFID("004C", 3)) 'Tag Life Cycle
+                              Rdtagnos = RD_MULTI_RFID("0040", 3)
+                              Rdtagref = RD_MULTI_RFID("0014", 10)
+                              RdtagWOnos = RD_MULTI_RFID("0000", 10)
+                              Rdtagqty = RD_MULTI_RFID("0028", 10)
+                              Rdtagop = RD_MULTI_RFID("0046", 3) 'WO output counter at packaging
 
-                Label5.Text = Rdtagcount
-                Label2.Text = "Please wait while programming the Tag..."
-                WOBuffer = ""
-                'Program RFID tag
-                'BarcodeScan_Comm.PortOpen = False
+                              Label5.Text = Rdtagcount
+                              Label2.Text = "Please wait while programming the Tag..."
+                              WOBuffer = ""
+                              'Program RFID tag
+                              'BarcodeScan_Comm.PortOpen = False
 
-                'Label2.Caption = "Checking RFID Tag Write Cycle..."
-                'If Rdtagcount < CDbl(CSInfo.CSWOQTY) Then
-                '    Label2.Caption = "Write Cycle unable to support WO quantity. Use another Tag and try again"
-                '    CSAction = 0
-                '    Text1(0).Text = ""
-                '    Text1(1).Text = ""
-                '    Text1(2).Text = ""
-                '    Text1(3).Text = ""
-                '    Text4(4).Text = ""
-                '    WOBuffer = ""
-                '    Exit Sub
-                'End If
-                Label2.Text = "Writing Work Order Number..."
-                If Not Wr_Tag(CSInfo.CSWONOS, "0000") Then
-                    Label2.Text = "Unable to write to address 0000H. Verify and try again from step 1."
-                    CSAction = 0
-                    _Text1_0.Text = ""
-                    _Text1_1.Text = ""
-                    _Text1_2.Text = ""
-                    _Text1_3.Text = ""
-                    _Text4_4.Text = ""
-                    WOBuffer = ""
-                    SelectedMode = 1
-                    CSAction = 0
-                    Exit Sub
-                End If
-                Label2.Text = "Writing Work Order Reference..."
-                If Not Wr_Tag(CSInfo.CSWOMODEL, "0014") Then
-                    Label2.Text = "Unable to write to address 0014H. Verify and try again from Step 1."
-                    CSAction = 0
-                    _Text1_0.Text = ""
-                    _Text1_1.Text = ""
-                    _Text1_2.Text = ""
-                    _Text1_3.Text = ""
-                    _Text4_4.Text = ""
-                    WOBuffer = ""
-                    SelectedMode = 1
-                    CSAction = 0
-                    Exit Sub
-                End If
-                Label2.Text = "Writing Work Order Quantity..."
-                If Not Wr_Tag(CSInfo.CSWOQTY, "0028") Then
-                    Label2.Text = "Unable to write to address 0028H. Verify and try again from Step 1."
-                    CSAction = 0
-                    _Text1_0.Text = ""
-                    _Text1_1.Text = ""
-                    _Text1_2.Text = ""
-                    WOBuffer = ""
-                    SelectedMode = 1
-                    CSAction = 0
-                    Exit Sub
-                End If
-                Label2.Text = "Writing WO PF Mode..."
-                If Not Wr_Tag(CSInfo.CSWOPFMODE, "0052") Then
-                    Label2.Text = "Unable to write to address 0052H. Verify and try again from Step 1."
-                    CSAction = 0
-                    _Text1_0.Text = ""
-                    _Text1_1.Text = ""
-                    _Text1_2.Text = ""
-                    _Text1_3.Text = ""
-                    _Text4_4.Text = ""
-                    WOBuffer = ""
-                    SelectedMode = 1
-                    CSAction = 0
-                    Exit Sub
-                End If
-                Label2.Text = "Reseting packaging counter..."
-                If Not Wr_Tag("000000", "0046") Then
-                    Label2.Text = "Unable to write to address 0046H. Verify and try again from Step 1."
-                    CSAction = 0
-                    _Text1_0.Text = ""
-                    _Text1_1.Text = ""
-                    _Text1_2.Text = ""
-                    _Text1_3.Text = ""
-                    _Text4_4.Text = ""
-                    WOBuffer = ""
-                    SelectedMode = 1
-                    CSAction = 0
-                    Exit Sub
-                End If
-                Label2.Text = "Incrementing Tag cycle..."
-                If Not Wr_Tag(CDbl(Rdtagcount) + 1, "004C") Then
-                    Label2.Text = "Unable to write to address 0046H. Verify and try again from Step 1."
-                    CSAction = 0
-                    _Text1_0.Text = ""
-                    _Text1_1.Text = ""
-                    _Text1_2.Text = ""
-                    _Text1_3.Text = ""
-                    _Text4_4.Text = ""
-                    WOBuffer = ""
-                    SelectedMode = 1
-                    CSAction = 0
-                    Exit Sub
-                End If
-                Label2.Text = "RFID Tag programming completed."
-                Label5.Text = CDbl(Rdtagcount) + 1
+                              'Label2.Caption = "Checking RFID Tag Write Cycle..."
+                              'If Rdtagcount < CDbl(CSInfo.CSWOQTY) Then
+                              '    Label2.Caption = "Write Cycle unable to support WO quantity. Use another Tag and try again"
+                              '    CSAction = 0
+                              '    Text1(0).Text = ""
+                              '    Text1(1).Text = ""
+                              '    Text1(2).Text = ""
+                              '    Text1(3).Text = ""
+                              '    Text4(4).Text = ""
+                              '    WOBuffer = ""
+                              '    Exit Sub
+                              'End If
+                              Label2.Text = "Writing Work Order Number..."
+                              If Not Wr_Tag(CSInfo.CSWONOS, "0000") Then
+                                  Label2.Text = "Unable to write to address 0000H. Verify and try again from step 1."
+                                  CSAction = 0
+                                  _Text1_0.Text = ""
+                                  _Text1_1.Text = ""
+                                  _Text1_2.Text = ""
+                                  _Text1_3.Text = ""
+                                  _Text4_4.Text = ""
+                                  WOBuffer = ""
+                                  SelectedMode = 1
+                                  CSAction = 0
+                                  Exit Sub
+                              End If
+                              Label2.Text = "Writing Work Order Reference..."
+                              If Not Wr_Tag(CSInfo.CSWOMODEL, "0014") Then
+                                  Label2.Text = "Unable to write to address 0014H. Verify and try again from Step 1."
+                                  CSAction = 0
+                                  _Text1_0.Text = ""
+                                  _Text1_1.Text = ""
+                                  _Text1_2.Text = ""
+                                  _Text1_3.Text = ""
+                                  _Text4_4.Text = ""
+                                  WOBuffer = ""
+                                  SelectedMode = 1
+                                  CSAction = 0
+                                  Exit Sub
+                              End If
+                              Label2.Text = "Writing Work Order Quantity..."
+                              If Not Wr_Tag(CSInfo.CSWOQTY, "0028") Then
+                                  Label2.Text = "Unable to write to address 0028H. Verify and try again from Step 1."
+                                  CSAction = 0
+                                  _Text1_0.Text = ""
+                                  _Text1_1.Text = ""
+                                  _Text1_2.Text = ""
+                                  WOBuffer = ""
+                                  SelectedMode = 1
+                                  CSAction = 0
+                                  Exit Sub
+                              End If
+                              Label2.Text = "Writing WO PF Mode..."
+                              If Not Wr_Tag(CSInfo.CSWOPFMODE, "0052") Then
+                                  Label2.Text = "Unable to write to address 0052H. Verify and try again from Step 1."
+                                  CSAction = 0
+                                  _Text1_0.Text = ""
+                                  _Text1_1.Text = ""
+                                  _Text1_2.Text = ""
+                                  _Text1_3.Text = ""
+                                  _Text4_4.Text = ""
+                                  WOBuffer = ""
+                                  SelectedMode = 1
+                                  CSAction = 0
+                                  Exit Sub
+                              End If
+                              Label2.Text = "Reseting packaging counter..."
+                              If Not Wr_Tag("000000", "0046") Then
+                                  Label2.Text = "Unable to write to address 0046H. Verify and try again from Step 1."
+                                  CSAction = 0
+                                  _Text1_0.Text = ""
+                                  _Text1_1.Text = ""
+                                  _Text1_2.Text = ""
+                                  _Text1_3.Text = ""
+                                  _Text4_4.Text = ""
+                                  WOBuffer = ""
+                                  SelectedMode = 1
+                                  CSAction = 0
+                                  Exit Sub
+                              End If
+                              Label2.Text = "Incrementing Tag cycle..."
+                              If Not Wr_Tag(CDbl(Rdtagcount) + 1, "004C") Then
+                                  Label2.Text = "Unable to write to address 0046H. Verify and try again from Step 1."
+                                  CSAction = 0
+                                  _Text1_0.Text = ""
+                                  _Text1_1.Text = ""
+                                  _Text1_2.Text = ""
+                                  _Text1_3.Text = ""
+                                  _Text4_4.Text = ""
+                                  WOBuffer = ""
+                                  SelectedMode = 1
+                                  CSAction = 0
+                                  Exit Sub
+                              End If
+                              Label2.Text = "RFID Tag programming completed."
+                              Label5.Text = CDbl(Rdtagcount) + 1
 
 
-                'InString = InputBox("Enter new model Name", "Adding New Reference")
-                Dim query As String
-                Dim timesNow As String = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
-                If CSInfo.CSWOPFMODE = "PFC" Then
-                    query = "INSERT INTO [CSUNIT] ([UNITNOS],[WONOS],[WOMODELNAME],[WOQTY],[PFMODE],[LOGISTICC],[STATUS],[DATECREATED]) 
+                              'InString = InputBox("Enter new model Name", "Adding New Reference")
+                              Dim query As String
+                              Dim timesNow As String = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")
+                              If CSInfo.CSWOPFMODE = "PFC" Then
+                                  query = "INSERT INTO [CSUNIT] ([UNITNOS],[WONOS],[WOMODELNAME],[WOQTY],[PFMODE],[LOGISTICC],[STATUS],[DATECREATED]) 
                             VALUES (ISNULL('" & Rdtagnos & "','" & CSInfo.CSWONOS & "','" & CSInfo.CSWOMODEL & "','" & CSInfo.CSWOQTY & "',
                             '" & CSInfo.CSWOPFMODE & "','" & CSInfo.CSWOLC & "','" & "OPEN" & "','" & DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss") & "')"
-                Else
-                    query = "INSERT INTO [CSUNIT] ([UNITNOS],[WONOS],[WOMODELNAME],[WOQTY],[PFMODE],[LOGISTICC],[STATUS],[DATECREATED]) 
+                              Else
+                                  query = "INSERT INTO [CSUNIT] ([UNITNOS],[WONOS],[WOMODELNAME],[WOQTY],[PFMODE],[LOGISTICC],[STATUS],[DATECREATED]) 
                             VALUES (ISNULL('" & Rdtagnos & "','" & CSInfo.CSWONOS & "','" & CSInfo.CSWOMODEL & "','" & CSInfo.CSWOQTY & "',
                              '" & CSInfo.CSWOPFMODE & "','','" & "OPEN" & "','" & timesNow & "')"
-                End If
+                              End If
 
-                If ConnectionDatabase.insertData(query) Then
-                    MsgBox("Success add database!")
-                Else
-                    MsgBox("Failed add database!")
-                End If
-                'Creating PSN Folder for this WO
-                'MkDir INIPSNFOLDERPATH & CSInfo.CSWONOS
-                CSAction = 0
-                WOBuffer = ""
-                'RFID_Comm.PortOpen = False
-                Exit Sub
-            ElseIf SelectedMode = 2 Then
-                Text6.Text = WOBuffer
-                If File.Exists(INIPSNFOLDERPATH & Text6.Text & ".Txt") Then
-                    MSFlexGrid1.Rows.Clear()
-                    MSFlexGrid1.Columns.Clear()
-                    LoadPSNTable()
-                    Text6.Text = WOBuffer
-                    WOBuffer = ""
+                              If ConnectionDatabase.insertData(query) Then
+                                  MsgBox("Success add database!")
+                              Else
+                                  MsgBox("Failed add database!")
+                              End If
+                              'Creating PSN Folder for this WO
+                              'MkDir INIPSNFOLDERPATH & CSInfo.CSWONOS
+                              CSAction = 0
+                              WOBuffer = ""
+                              'RFID_Comm.PortOpen = False
+                              Exit Sub
+                          ElseIf SelectedMode = 2 Then
+                              Text6.Text = WOBuffer
+                              If File.Exists(INIPSNFOLDERPATH & Text6.Text & ".Txt") Then
+                                  MSFlexGrid1.Rows.Clear()
+                                  MSFlexGrid1.Columns.Clear()
+                                  LoadPSNTable()
+                                  Text6.Text = WOBuffer
+                                  WOBuffer = ""
 
-                End If
-                WOBuffer = ""
-            ElseIf SelectedMode = 3 Then
-                Text7.Text = WOBuffer
-                WOBuffer = ""
-            Else
-                WOBuffer = ""
-            End If
+                              End If
+                              WOBuffer = ""
+                          ElseIf SelectedMode = 3 Then
+                              Text7.Text = WOBuffer
+                              WOBuffer = ""
+                          Else
+                              WOBuffer = ""
+                          End If
+                      End Sub)
+
         End If
     End Sub
 
@@ -1427,33 +1430,33 @@ PrgTag:
         'ConnectTable.CellAlignment = 4
         'ConnectTable.Text = Mid(statuscode, 1, pos1 - 1)
         'ServerMonitorOP.WONos(i) = Mid(statuscode, 1, pos1 - 1)
-        'ConnectTable.Rows(1).Cells(4).Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        ConnectTable.Rows(rowsIndex).Cells(4).Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         ConnectTable.Rows(rowsIndex).Cells(4).Value = Mid(statuscode, 1, pos1 - 1)
         'ServerMonitorOP.WONos(i) = Mid(statuscode, 1, pos1 - 1)
 
         'ConnectTable.Col = 5
         'ConnectTable.CellAlignment = 4
         'ConnectTable.Text = Mid(statuscode, pos1 + 1, (pos2 - pos1) - 1)
-        'ConnectTable.Rows(1).Cells(5).Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        ConnectTable.Rows(rowsIndex).Cells(5).Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         ConnectTable.Rows(rowsIndex).Cells(5).Value = Mid(statuscode, pos1 + 1, (pos2 - pos1) - 1)
 
         'ConnectTable.Col = 6
         'ConnectTable.CellAlignment = 4
         'ConnectTable.Text = Mid(statuscode, pos2 + 1, (pos3 - pos2) - 1)
-        'ConnectTable.Rows(1).Cells(6).Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        ConnectTable.Rows(rowsIndex).Cells(6).Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         ConnectTable.Rows(rowsIndex).Cells(6).Value = Mid(statuscode, pos2 + 1, (pos3 - pos2) - 1)
 
         'ConnectTable.Col = 7
         'ConnectTable.CellAlignment = 4
         'ConnectTable.Text = Mid(statuscode, pos3 + 1, (pos4 - pos3) - 1)
-        'ConnectTable.Rows(1).Cells(7).Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        ConnectTable.Rows(rowsIndex).Cells(7).Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         ConnectTable.Rows(rowsIndex).Cells(7).Value = Mid(statuscode, pos3 + 1, (pos4 - pos3) - 1)
 
         'ConnectTable.Col = 8
         'ConnectTable.CellAlignment = 4
         'ConnectTable.Text = Mid(statuscode, pos4 + 1)
 
-        'ConnectTable.Rows(1).Cells(8).Style.Alignment = DataGridViewContentAlignment.MiddleCenter
+        ConnectTable.Rows(rowsIndex).Cells(8).Style.Alignment = DataGridViewContentAlignment.MiddleCenter
         ConnectTable.Rows(rowsIndex).Cells(8).Value = Mid(statuscode, pos4 + 1)
         'ServerMonitorOP.OutputQty(i) = Mid(statuscode, pos4 + 1)
 Skip:
@@ -2605,5 +2608,9 @@ SkipAdd:
         Timer1.Enabled = False
         Me.Hide()
         FrmMaterial.ShowDialog()
+    End Sub
+
+    Private Sub TimerBusy_Tick(sender As Object, e As EventArgs) Handles TimerBusy.Tick
+
     End Sub
 End Class
